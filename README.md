@@ -1,14 +1,16 @@
 # PaaSMigrator
 
-This a Dot net based application and containerized. You can clone - https://github.com/samyakj01/PaaS-Migrator. 
+This a Dot net based application and containerized.
 
-This repo have Jenkinsfile for automating the following:
+This repo have Jenkins file for automating the following process:
 
-1. Automating Docker image creation.
-2. Automating Docker image upload to Azure container registry.
-3. Automating Docker container provisioning.
+1. Docker image creation.
+2. Docker image upload to Azure Container Cegistry.
+3. Docker container provisioning.
 
 You can configure pipeline in your Jenkins instance (Docker also installed) by creating a Declarative pipeline.
+
+Also, we have azure-pipelines yaml file to build and push docker image from Azure repository to Azure Container Registry.
 
 
 
