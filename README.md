@@ -7,7 +7,8 @@ This repo have Jenkinsfile for automating the following:
 1. Automating Docker image creation.
 2. Automating Docker image upload to Azure container registry.
 3. Automating Docker container provisioning.
-4. You can configure pipeline in your Jenkins instance (Docker also installed) by creating a Declarative pipeline.
+
+You can configure pipeline in your Jenkins instance (Docker also installed) by creating a Declarative pipeline.
 
 
 
