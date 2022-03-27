@@ -1,0 +1,38 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+resources:
+- repo: self
+
+trigger: none
+
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: ''
+  # Give Image Repository Name as per your choice
+  imageRepository: 'myrepo'
+  # Give ACR Login Server Name
+  containerRegistry: 'myregistry.azurecr.io'
+
+stages:
+- stage: Build
+  displayName: Build and push stage
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      name: MyPipelineAgent
+    variables:
+      tags: $(Build.BuildId)
+    steps:
+    - task: Docker@2
+      displayName: Build and push an image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: '$(Build.SourcesDirectory)/BookListMVC/Dockerfile'
+        containerRegistry: $(dockerRegistryServiceConnection)
+        # Provide custom tag if needed
+        tags: |
+          $(Build.BuildId)

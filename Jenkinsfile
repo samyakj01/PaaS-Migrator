@@ -4,7 +4,7 @@ pipeline {
     
     environment {
         // Give Image Name as per your choice
-        imageRepository = "myRepo"
+        imageRepository = "myrepo"
         // Give ACR login Server Name
         loginServer = "myregistry.azurecr.io"
         // Add ACR credentials in Jenkins credentials and provide it's ID here
