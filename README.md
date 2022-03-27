@@ -1,4 +1,4 @@
-# PaaSMigrator
+# PaaS-Migrator
 
 This a Dot net based application and containerized.
 
