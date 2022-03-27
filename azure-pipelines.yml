@@ -22,7 +22,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      name: MyPipelineAgent
+      vmImage: ubuntu-latest
     variables:
       tags: $(Build.BuildId)
     steps:
