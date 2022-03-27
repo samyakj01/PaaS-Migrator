@@ -4,7 +4,7 @@ pipeline {
     
     environment {
         // Give Image Name as per your choice
-        imageName = "myimage"
+        imageRepository = "myRepo"
         // Give ACR login Server Name
         loginServer = "myregistry.azurecr.io"
         // Add ACR credentials in Jenkins credentials and provide it's ID here
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 dir('BookListMVC') {
                     script {
-                        dockerImage = docker.build imageName
+                        dockerImage = docker.build imageRepository
                     }
                 }
             }
@@ -55,7 +55,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 script {
-                   bat "docker run -d -p 8090:80 --rm --name mywebapp $loginServer/$imageName"
+                   bat "docker run -d -p 8090:80 --rm --name myPOCwebapp $loginServer/$imageRepository"
                 }
             }
        }
